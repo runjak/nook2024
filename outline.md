@@ -36,12 +36,14 @@
 - Desmos, Betrag
   - Punkt, Strecke
 - Shift, Scale
+- Combining segments
 
 ### Beispiele in 2D
 
 - UV Space
 - Kreis, Rechteck
 - Shift, Scale, Rotate
+- Combining primitives
 
 #### Domain Repetition
 
@@ -56,6 +58,8 @@
 - Raytracing/Raymarching
 - Normals
 - Licht und Reflektion
+- Kugel, Quader, Liste von Beispielen
+- Kombinieren
 
 #### Domain repetition
 

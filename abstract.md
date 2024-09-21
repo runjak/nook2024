@@ -37,7 +37,10 @@ Jeder Tag geht.
 > Beschreibe das Thema näher. Denk an eventuell benötigtes Vorwissen.
 > Diese Beschreibung wird auch als Ankündigung auf unserer Website veröffentlicht.
 
-Mit Zahlen und ein wenig Mathe verhelfen wir Software dazu, uns Bilder zu malen.
+Vielleicht kennt ihr das: ihr möchtet gern ein Bild auf dem Bildschirm haben und vielleicht auch animieren, aber wisst nicht so richtig wie. Oder ihr findet es einfach immer spannend, was mit Software zu basteln, und sichtbare Resultate zu haben?
+
+Im Rahmen dieses Vortrags nähern wir uns den Konzepten Shader und Signed Distance Functions (SDFs).
+Wir entdecken kleine Bausteine und lernen, sie zu kombinieren.
 
 Im Verlauf dieses Ausflugs nähern wir uns den Begriffen
 Shader, Signed Distance Function, Raytracing und Domain Repetition.
@@ -79,6 +82,8 @@ Ich möchte selbst programmierte Shader als Teil des Vortrags zeigen.
 
 Unter Umständen ist es deshalb (der shader wegen) auch nicht ganz einfach für mich, ein PDF für den Talk zu produzieren.
 Ich vermute, dass ich es bis auf die Shader machen kann, oder aber auch ein HTML, das die Shader eingebettet hat, bereitstellen kann.
+
+Bei technischen Problemen reicht im Zweifel ein Gerät mit Browser und Hardwarebeschleunigung für Grafik für die Präsentation.
 
 ## Aufzeichnung und Streaming
 
