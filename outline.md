@@ -1,17 +1,62 @@
 # Malen nach Zahlen outline
 
-Was war gleich Malen nach Zahlen?
+## Intro
 
-Was sind eigentlich Shader?
-Single colored background
-Color gradients
-Change over Time
+- Moin, ich bins, Jakob 🙋‍♀️
 
-Die Sache mit den Signed Distance Functions (SDFs)
+## Den Titel addressieren
 
-1D, Desmos, Shift, Scale
-2D, UV space, Circle, Rectangle, Shift, Scale, Rotate
-Domain Repetition
-Randomness
+- Was war gleich Malen nach Zahlen?
+- Andy Warhol, Beispiel
+- Wie kommen wir zu Zahlen?
+  - Beispiel: ausgemalte Bereiche
+  - Farbe als Vektor
 
-3D, Raytracing/Raymarching, Normals, Light/Reflections, Domain repetition, Tiling
+## Was sind eigentlich Shader?
+
+- Programme, die auf der Grafikkarte laufen
+- Wie sieht das aus? Architektur?
+  - Recall: Grafik, Book of shaders
+  - Typen unterschiedlicher Shader
+- Ausführungseinschränkungen?
+- Wann wird compiled?
+
+### Shader beispiele
+
+- Einfarbiger Hintergrund
+- Farbverläufe
+- Veränderung über Zeit
+
+## Signed Distance Functions (SDFs)
+
+- Was sind das eigentlich konzeptionell?
+
+### Beispiele in 1D
+
+- Desmos, Betrag
+  - Punkt, Strecke
+- Shift, Scale
+
+### Beispiele in 2D
+
+- UV Space
+- Kreis, Rechteck
+- Shift, Scale, Rotate
+
+#### Domain Repetition
+
+- Lasst mal über Domain Repetition reden
+
+#### Randomness
+
+- Zufall ist schwierig, aber wir können da nen Trick tun
+
+### Beispiele in 3D
+
+- Raytracing/Raymarching
+- Normals
+- Licht und Reflektion
+
+#### Domain repetition
+
+- Tiling in 3D
