@@ -5,7 +5,7 @@
 
 ## Email
 
-nook2024@runjak.codes
+`nook2024@runjak.codes`
 
 ## Titel
 
@@ -37,20 +37,20 @@ Jeder Tag geht.
 > Beschreibe das Thema näher. Denk an eventuell benötigtes Vorwissen.
 > Diese Beschreibung wird auch als Ankündigung auf unserer Website veröffentlicht.
 
-Vielleicht kennt ihr das: ihr möchtet gern ein Bild auf dem Bildschirm haben und vielleicht auch animieren, aber wisst nicht so richtig wie. Oder ihr findet es einfach immer spannend, was mit Software zu basteln, und sichtbare Resultate zu haben?
+Vielleicht kennt ihr das: ihr möchtet gern ein Bild auf dem Bildschirm haben und vielleicht auch animieren, aber wisst nicht so richtig wie. Oder ihr findet es einfach spannend, was mit Software zu basteln und die Auswirkungen direkt zu sehen?
 
-Im Rahmen dieses Vortrags nähern wir uns den Konzepten Shader und Signed Distance Functions (SDFs).
+Im Vortrag nähern wir uns den Konzepten Shader und Signed Distance Functions (SDFs).
 Wir entdecken kleine Bausteine und lernen, sie zu kombinieren.
 
-Im Verlauf dieses Ausflugs nähern wir uns den Begriffen
-Shader, Signed Distance Function, Raytracing und Domain Repetition.
-
-Weil große Formeln unübersichtlich sind fangen wir mit kleinen Bausteinen an, die wir schrittweise zusammensetzen.
+Der Vortrag möchte Begeisterung fürs Thema teilen, zum Spielen mit Shadern einladen,
+und eventuell vorhandene Berührungsängste mit dem Thema abbauen.
 
 Benötigtes Vorwissen:
-Im Rahmen des Vortrags werden wir Code und Formeln sehen.
-Der Code wird im Wesentlichen aus kurzen Beispielen in GLSL bestehen.
-Die Formeln werden Dinge wie Vektoren, Minimum und eine gelegentliche Matrix enthalten.
+Im Rahmen des Vortrags werden wir Beispiele mit Code und Formeln sehen.
+Diese werden jeweils entsprechend erklärt, und Nachfragen sind gern gesehen.
+Wenn ihr schonmal ein `if` oder `for` gesehen habt,
+und euch Konzepte wie Vektoren oder ein Minimum schon über den Weg liefen,
+seid ihr für den Vortragsinhalt vermutlich gut gerüstet.
 
 ## Bezug zum Thema
 
@@ -59,8 +59,12 @@ Die Formeln werden Dinge wie Vektoren, Minimum und eine gelegentliche Matrix ent
 > Wie bist du darauf gekommen es zu präsentieren?
 > Diese Informationen sind nur für die NooK-Orga und werden nicht veröffentlicht.
 
-Im Verlauf des letzten Jahres habe ich mich vermehrt in meiner Freizeit mit Pixelshadern, Raytracing und Signed Distance Functions (SDFs) beschäftigt. Im Rahmen davon habe ich mehrere Vorträge, Blogposts und Codebeispiele zum Thema konsumiert, und teils nachgestellt. Ebenso habe ich Zeit damit verbracht, eigene Shader zu entwickeln und auszuprobieren.
-Mein Interesse an Computergrafik im Weiteren besteht schon länger, ich würde es aber eher als Hobby einordnen, mit dem ich immer wieder Zeit verbringe. Der Themenkomplex ordnet sich für mich in ein langjähriges Interesse an Software ein.
+Im Verlauf des letzten Jahres habe ich mich vermehrt in meiner Freizeit mit Pixelshadern, Raytracing und Signed Distance Functions (SDFs) beschäftigt.
+
+Dabei habe ich mehrere Vorträge, Blogposts und Codebeispiele konsumiert und teils nachgearbeitet.
+Ebenso habe ich immer wieder meine Freizeit mit eigenen Experimenten gefüllt, und eigene Shader entwickelt.
+
+Mein Interesse an Computergrafik besteht schon länger, ich würde es aber eher als Hobby einordnen, mit dem ich immer wieder Zeit verbringe. Der Themenkomplex ordnet sich für mich in ein langjähriges Interesse an Software ein.
 
 ## Anforderungen/Bemerkungen
 
@@ -87,7 +91,7 @@ Bei technischen Problemen reicht im Zweifel ein Gerät mit Browser und Hardwareb
 
 ## Aufzeichnung und Streaming
 
-Soll aufgezeichnet und gestreamt werden.
+Es soll aufgezeichnet und gestreamt werden.
 
 ## T-Shirt
 
