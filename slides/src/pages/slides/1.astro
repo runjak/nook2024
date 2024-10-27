@@ -1,9 +1,11 @@
 ---
+import { slide } from "astro:transitions";
+
 import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout title="Nook2024: Malen nach Zahlen">
-  <main transition:animate="slide">
+  <main transition:animate={slide({ duration: "0.4s" })}>
     <h1>Malen nach Zahlen</h1>
     <p>Could be a first slide?</p>
     <a href="/slides/2">Go to slide 2.</a>
