@@ -18,6 +18,23 @@ const { prev, next } = Astro.props;
   <slot />
 </main>
 
+{
+  (prev || next) && (
+    <div class="slide-control">
+      {prev && (
+        <a href={prev} title="Previous slide">
+          ⬅️
+        </a>
+      )}
+      {next && (
+        <a href={next} title="Next slide">
+          ➡️
+        </a>
+      )}
+    </div>
+  )
+}
+
 <style>
   main {
     margin: 2rem;
@@ -30,6 +47,25 @@ const { prev, next } = Astro.props;
 
     background-color: #006360;
     border-radius: 7px;
+  }
+
+  .slide-control {
+    background-color: #006360;
+    border-radius: 7px;
+
+    margin: 0.5rem 2rem;
+
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .slide-control a {
+    text-decoration: none;
   }
 </style>
 
