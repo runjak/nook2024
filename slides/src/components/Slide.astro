@@ -20,7 +20,7 @@ const { prev, next } = Astro.props;
 
 {
   (prev || next) && (
-    <div class="slide-control">
+    <div class="slide-control" transition:animate="fade">
       {prev && (
         <a href={prev} title="Previous slide">
           ⬅️
