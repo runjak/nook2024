@@ -3,6 +3,7 @@ import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 
 export default defineConfig({
+  site: "https://nook2024.runjak.codes",
   prefetch: {
     /**
      * Enabling prefetching for ViewTransitions.
