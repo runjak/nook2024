@@ -1,0 +1,50 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Slide from "../../components/Slide.astro";
+import type { RenderResult } from "astro:content";
+
+const slides = await getCollection("slides");
+
+const contentMap = Object.fromEntries(
+  await Promise.all(
+    slides.map(
+      async (slide): Promise<[string, RenderResult]> => [
+        slide.slug,
+        await slide.render(),
+      ]
+    )
+  )
+);
+
+---
+
+<Layout title="Nook2024: Slide overview">
+  <div class="slides">
+    {
+      slides.map((slide) => {
+        const { Content } = contentMap[slide.slug];
+        return (
+          <a class="slide" href={`/slides/${slide.slug}`}>
+            <Slide>
+              <Content />
+            </Slide>
+          </a>
+        );
+      })
+    }
+  </div>
+</Layout>
+
+<style>
+  .slides {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .slide {
+    text-decoration: none;
+    flex: 1 1 0;
+  }
+</style>
