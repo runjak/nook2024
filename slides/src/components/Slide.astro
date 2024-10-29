@@ -16,24 +16,25 @@ const { prev, next } = Astro.props;
   transition:animate={slide({ duration: "0.4s" })}
 >
   <slot />
+
+  {
+    (prev || next) && (
+      <div class="slide-control">
+        {prev && (
+          <a href={prev} title="Previous slide">
+            ⬅️
+          </a>
+        )}
+        {next && (
+          <a href={next} title="Next slide">
+            ➡️
+          </a>
+        )}
+      </div>
+    )
+  }
 </main>
 
-{
-  (prev || next) && (
-    <div class="slide-control" transition:animate="fade">
-      {prev && (
-        <a href={prev} title="Previous slide">
-          ⬅️
-        </a>
-      )}
-      {next && (
-        <a href={next} title="Next slide">
-          ➡️
-        </a>
-      )}
-    </div>
-  )
-}
 
 <style>
   main {
