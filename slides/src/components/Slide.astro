@@ -37,9 +37,11 @@ const { prev, next } = Astro.props;
 
 <style>
   main {
+    height: calc(100% - 4rem);
+    max-width: calc(100% - 2rem);
+
     margin: 1rem;
     padding: 1rem;
-    max-width: calc(100% - 2rem);
     color: white;
 
     font-size: 20px;
@@ -53,7 +55,7 @@ const { prev, next } = Astro.props;
     background-color: #006360;
     border-radius: 7px;
 
-    margin: 0.5rem 1rem;
+    margin: 1rem;
 
     position: absolute;
     right: 0;
