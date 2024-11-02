@@ -13,9 +13,11 @@
     "@astrojs/check": "^0.9.4",
     "@astrojs/mdx": "^3.1.8",
     "astro": "^4.16.7",
+    "reveal.js": "^5.1.0",
     "typescript": "^5.6.3"
   },
   "devDependencies": {
-    "@types/node": "^22.8.1"
+    "@types/node": "^22.8.1",
+    "@types/reveal.js": "^5.0.4"
   }
 }
