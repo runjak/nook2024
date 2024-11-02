@@ -7,7 +7,6 @@
 ## Den Titel addressieren
 
 - Was war gleich Malen nach Zahlen?
-- Andy Warhol, Beispiel
 - Wie kommen wir zu Zahlen?
   - Beispiel: ausgemalte Bereiche
   - Farbe als Vektor
