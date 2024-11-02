@@ -1,9 +1,6 @@
 ---
-import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
-
-const [firstSlide] = await getCollection("slides");
 ---
 
 <Layout title="Nook2024: Malen nach Zahlen">
@@ -11,11 +8,7 @@ const [firstSlide] = await getCollection("slides");
     <h1>Malen nach <span class="text-gradient">Zahlen</span></h1>
 
     <ul role="list" class="cards-list">
-      <Card
-        href={`/slides/${firstSlide.slug}`}
-        title="Slides"
-        body="Look at the slides."
-      />
+      <Card href="/slides/" title="Slides" body="Look at the slides." />
       <Card
         href="https://2024.nook-luebeck.de/"
         title="Nook2024"

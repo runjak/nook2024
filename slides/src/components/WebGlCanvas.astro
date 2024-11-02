@@ -192,7 +192,9 @@ const shaderCode = String(fs.readFileSync(pathToFile));
     });
   };
 
-  document.addEventListener("astro:page-load", () => {
-    init();
+  import Reveal from "reveal.js";
+
+  Reveal.on("ready", () => {
+    init()
   });
 </script>

@@ -1,0 +1,78 @@
+---
+title: Was war gleich Malen nach Zahlen?
+---
+
+import { Image } from "astro:assets";
+
+import paintingByNumbers from "../../assets/painting-by-numbers.jpg";
+import mariner4 from "../../assets/1964-04-13_mariner4.jpg";
+import FirstImageFromMariner4 from "../../assets/First_Image_from_Mariner_4_-_GPN-2003-00060.jpg";
+import stripeCloseup from "../../assets/mariner-4-stripe-closeup.png";
+import colorKey from "../../assets/mariner-4-color-key.jpg";
+import FirstTvImageOfMars from "../../assets/1024px-First_TV_Image_of_Mars.jpg";
+
+<section>
+<Image
+  src={paintingByNumbers}
+  alt="Ein Malen nach Zahlen set"
+/>
+
+1950 in Detroit:  
+Max S. Klein patentierte [Malen nach Zahlen](https://en.wikipedia.org/wiki/Paint_by_number)
+
+{/* Image source: https://en.wikipedia.org/wiki/File:%D0%9A%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D1%8B_%D0%BF%D0%BE_%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%D0%B0%D0%BC.jpg */}
+</section>
+
+<section>
+<Image
+  src={mariner4}
+  alt="Ein Foto des Mariner 4 Raumschiffs"
+/>
+
+1964-11-28 NASA:  
+[Mariner 4 Spacecraft](https://en.wikipedia.org/wiki/Mariner_4) geht auf die Reise
+
+{/* Image source: https://en.wikipedia.org/wiki/File:Mariner_4_1304_1964novembemariner4.jpg */}
+</section>
+
+<section>
+<Image
+  src={FirstImageFromMariner4}
+  alt="Malen nach Zahlen bei der NASA"
+/>
+
+1965-07-15 NASA:  
+[Malen nach Zahlen](https://science.nasa.gov/resource/first-tv-image-of-mars-hand-colored/)
+
+{/* Image source: https://en.wikipedia.org/wiki/File:First_Image_from_Mariner_4_-_GPN-2003-00060.jpg */}
+</section>
+
+<section>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+    <Image
+      src={stripeCloseup}
+      alt="Papierstreifen für Malen nach Zahlen bei der NASA"
+      width="400"
+    />
+    <Image
+      src={colorKey}
+      alt="Farbschlüssel für Malen nach Zahlen bei der NASA"
+      width="400"
+    />
+    <div>
+      [en.wikipedia.org](https://en.wikipedia.org/wiki/File:First_TV_Image_of_Mars.jpg)
+    </div>
+    <div>
+      [science.nasa.gov](https://science.nasa.gov/resource/first-tv-image-of-mars-hand-colored/)
+    </div>
+  </div>
+</section>
+
+<section>
+<Image src={FirstTvImageOfMars} alt="Das erste Fernsehbild vom Mars" />
+
+1965-07-15 NASA:  
+[Erstes Fernsehbild](https://science.nasa.gov/resource/first-tv-image-of-mars-hand-colored/) vom Mars
+
+{/* Image source: https://en.wikipedia.org/wiki/File:First_TV_Image_of_Mars.jpg */}
+</section>

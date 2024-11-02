@@ -1,0 +1,68 @@
+---
+import { getCollection } from "astro:content";
+import type { RenderResult } from "astro:content";
+
+import "reveal.js/dist/reveal.css";
+import "reveal.js/dist/theme/black.css";
+
+const slides = await getCollection("slides");
+
+const contentMap = Object.fromEntries(
+  await Promise.all(
+    slides.map(
+      async (slide): Promise<[string, RenderResult]> => [
+        slide.slug,
+        await slide.render(),
+      ]
+    )
+  )
+);
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Slides für den Talk 'Malen nach Zahlen' auf der Nook 2024"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Malen nach Zahlen</title>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        {
+          slides.map((slide) => {
+            const { Content } = contentMap[slide.slug];
+
+            return (
+              <section>
+                <Content />
+              </section>
+            );
+          })
+        }
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  import Reveal from "reveal.js";
+
+  Reveal.initialize();
+</script>
+
+<style is:global>
+  .backgrounds {
+    /* background: #002322; */
+    background-color: #006360;
+  }
+
+  body {
+    --r-link-color: #fff475;
+  }
+</style>
