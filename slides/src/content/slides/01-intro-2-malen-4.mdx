@@ -1,13 +1,26 @@
 ---
 title: Was war gleich Malen nach Zahlen?
 ---
-import { Image } from 'astro:assets';
-import stripeCloseup from '../../assets/mariner-4-stripe-closeup.png'
-import colorKey from '../../assets/mariner-4-color-key.jpg'
+
+import { Image } from "astro:assets";
+import stripeCloseup from "../../assets/mariner-4-stripe-closeup.png";
+import colorKey from "../../assets/mariner-4-color-key.jpg";
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-<Image src={stripeCloseup} alt="Papierstreifen für Malen nach Zahlen bei der NASA" width="600" />
-<Image src={colorKey} alt="Farbschlüssel für Malen nach Zahlen bei der NASA" width="600" />
-<div>[en.wikipedia.org](https://en.wikipedia.org/wiki/File:First_TV_Image_of_Mars.jpg)</div>
-<div>[science.nasa.gov](https://science.nasa.gov/resource/first-tv-image-of-mars-hand-colored/)</div>
+  <Image
+    src={stripeCloseup}
+    alt="Papierstreifen für Malen nach Zahlen bei der NASA"
+    width="400"
+  />
+  <Image
+    src={colorKey}
+    alt="Farbschlüssel für Malen nach Zahlen bei der NASA"
+    width="400"
+  />
+  <div>
+    [en.wikipedia.org](https://en.wikipedia.org/wiki/File:First_TV_Image_of_Mars.jpg)
+  </div>
+  <div>
+    [science.nasa.gov](https://science.nasa.gov/resource/first-tv-image-of-mars-hand-colored/)
+  </div>
 </div>
