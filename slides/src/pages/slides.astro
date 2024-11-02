@@ -53,7 +53,29 @@ const contentMap = Object.fromEntries(
 <script>
   import Reveal from "reveal.js";
 
-  Reveal.initialize();
+  const saveState = () => {
+    const state = Reveal.getState();
+    window.location.hash = btoa(JSON.stringify(state));
+  };
+
+  const loadState = () => {
+    try {
+      const hash = window.location.hash;
+
+      if (hash.startsWith("#")) {
+        const state = JSON.parse(atob(hash.substring(1)));
+        Reveal.setState(state);
+      }
+    } catch (e) {
+      console.error("error in loadState:", e);
+    }
+  };
+
+  Reveal.initialize().then(loadState);
+
+  Reveal.on("slidechanged", saveState);
+  Reveal.on("overviewshown", saveState);
+  Reveal.on("overviewhidden", saveState);
 </script>
 
 <style is:global>
