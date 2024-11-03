@@ -138,6 +138,11 @@ const initUniforms = (
   }
 };
 
+const rescaleCanvas = (canvas: HTMLCanvasElement, scale: number) => {
+  canvas.width *= scale;
+  canvas.height *= scale;
+};
+
 export const init = () => {
   const vs = `
       attribute vec4 a_Position;
@@ -148,6 +153,8 @@ export const init = () => {
       `;
 
   document.querySelectorAll("canvas").forEach((canvas: HTMLCanvasElement) => {
+    rescaleCanvas(canvas, 4);
+
     const gl = canvas.getContext("webgl");
     if (!gl) {
       console.error(
