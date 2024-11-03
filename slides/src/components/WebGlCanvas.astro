@@ -1,7 +1,6 @@
 ---
 import fs from "fs";
 import path from "path";
-import { Code } from "astro:components";
 
 interface Props {
   file: string;
@@ -141,6 +140,26 @@ const shaderCode = String(fs.readFileSync(pathToFile));
 
       window.requestAnimationFrame(step);
     }
+
+    /**
+     * Different than Shadertoy
+     * https://www.shadertoy.com/view/Mss3zH
+     * https://gist.github.com/markknol/d06c0167c75ab5c6720fe9083e4319e1
+     */
+    const iMouse = gl.getUniformLocation(program, "iMouse");
+    if (iMouse) {
+      canvas.addEventListener("mousemove", (event) => {
+        const { clientX: x, clientY: y } = event;
+
+        gl.uniform2fv(iMouse, [x, y]);
+      });
+
+      canvas.addEventListener("click", (event) => {
+        const { clientX: x, clientY: y } = event;
+
+        gl.uniform4fv(iMouse, [x, y, x, y]);
+      });
+    }
   };
 
   const init = () => {
@@ -195,6 +214,6 @@ const shaderCode = String(fs.readFileSync(pathToFile));
   import Reveal from "reveal.js";
 
   Reveal.on("ready", () => {
-    init()
+    init();
   });
 </script>
