@@ -124,16 +124,20 @@ const initUniforms = (
    */
   const iMouse = gl.getUniformLocation(program, "iMouse");
   if (iMouse) {
+    // canvas specific click state
+    let [clickX, clickY] = [0, 0];
+
     canvas.addEventListener("mousemove", (event) => {
       const { clientX: x, clientY: y } = event;
 
-      gl.uniform2fv(iMouse, [x, y]);
+      gl.uniform4fv(iMouse, [x, y, clickX, clickY]);
     });
 
     canvas.addEventListener("click", (event) => {
       const { clientX: x, clientY: y } = event;
 
       gl.uniform4fv(iMouse, [x, y, x, y]);
+      [clickX, clickY] = [x, y];
     });
   }
 };
