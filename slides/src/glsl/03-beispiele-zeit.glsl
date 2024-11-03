@@ -10,7 +10,7 @@ const vec4 color3 = normalize(vec4(255, 244, 117, 255)); // #fff475
 void main() {
   vec2 uv = gl_FragCoord.xy / iResolution.xy;
 
-  float curve = 0.5 * sin((9.25 * uv.x) + (2.0 * iGlobalTime));
+  float curve = 0.4 * sin((9.25 * uv.x) + (2.0 * iGlobalTime));
   float lineAShape = smoothstep(1.0 - clamp(distance(curve + uv.y, 0.5), 0.0, 1.0), 1.0, 0.99);
 
   gl_FragColor = (1.0 - lineAShape) * vec4(mix(color3, color2, lineAShape));
