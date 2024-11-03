@@ -1,6 +1,5 @@
 precision mediump float;
 
-// https://en.wikibooks.org/wiki/Fractals/shadertoy#uniforms
 uniform vec3 iResolution;
 
 const vec4 color1 = normalize(vec4(0, 35, 34, 255)); // #002322

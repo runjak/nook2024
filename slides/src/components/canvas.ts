@@ -127,14 +127,23 @@ const initUniforms = (
     // canvas specific click state
     let [clickX, clickY] = [0, 0];
 
-    canvas.addEventListener("mousemove", (event) => {
-      const { clientX: x, clientY: y } = event;
+    const getPosition = (event: MouseEvent): { x: number; y: number } => {
+      const { left, top } = canvas.getBoundingClientRect();
+      const { clientX, clientY } = event;
+
+      return { x: clientX - left, y: clientY - top };
+    };
+
+    canvas.addEventListener("mousemove", (event: MouseEvent) => {
+      const { x, y } = getPosition(event);
 
       gl.uniform4fv(iMouse, [x, y, clickX, clickY]);
     });
 
-    canvas.addEventListener("click", (event) => {
-      const { clientX: x, clientY: y } = event;
+    canvas.addEventListener("click", (event: MouseEvent) => {
+      const { x, y } = getPosition(event);
+
+      console.log(x, y);
 
       gl.uniform4fv(iMouse, [x, y, x, y]);
       [clickX, clickY] = [x, y];
