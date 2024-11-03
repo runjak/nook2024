@@ -52,6 +52,7 @@ const contentMap = Object.fromEntries(
 
 <script>
   import Reveal from "reveal.js";
+  import { init as initCanvas } from "../components/canvas";
 
   const saveState = () => {
     const state = Reveal.getState();
@@ -71,7 +72,10 @@ const contentMap = Object.fromEntries(
     }
   };
 
-  Reveal.initialize().then(loadState);
+  Reveal.initialize().then(() => {
+    loadState();
+    initCanvas();
+  });
 
   Reveal.on("slidechanged", saveState);
   Reveal.on("overviewshown", saveState);
