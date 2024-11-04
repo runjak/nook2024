@@ -27,15 +27,15 @@ void main() {
   vec2 size = iResolution.xy - margins;
 
   vec2 uv = ((gl_FragCoord.xy - base) / size);
-  vec2 centerUv = (uv - vec2(0.5)) * 2.0;
+  vec2 domain = (uv - vec2(0.5)) * 2.0;
 
-  float outside = outsideCenter(centerUv);
+  float outside = outsideCenter(domain);
   if(outside > 0.) {
     gl_FragColor = color2;
     return;
   }
 
-  float inCircle = sdfCircle(centerUv, 0.5);
+  float inCircle = sdfCircle(domain, 0.5);
 
   gl_FragColor = chooseColor(inCircle, 100., color3, color1);
 }

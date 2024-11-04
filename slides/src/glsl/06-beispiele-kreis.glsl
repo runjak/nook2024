@@ -20,9 +20,9 @@ vec4 chooseColor(float value, vec4 c1, vec4 c2) {
 
 void main() {
   vec2 uv = (gl_FragCoord.xy / iResolution.xy);
-  vec2 centerUv = (uv - vec2(0.5)) * 2.0;
+  vec2 domain = (uv - vec2(0.5)) * 2.0;
 
-  float inCircle = sdfCircle(centerUv, 0.5);
+  float inCircle = sdfCircle(domain, 0.5);
 
   gl_FragColor = chooseColor(inCircle, color1, color3);
 }
