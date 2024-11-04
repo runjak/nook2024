@@ -2,20 +2,55 @@
 title: Beispiele in 2D
 ---
 
+import WebGlCode from "../../components/WebGlCode.astro";
+import WebGlCanvas from "../../components/WebGlCanvas.astro";
+
 <section>
 ## Beispiele in 2D
 
 Wie sieht das in 2D aus?
+
 </section>
 
 <section>
-- Kreis, Rechteck
+### Beispiel Kreis
+
+<WebGlCode file="06-beispiele-kreis" start="float sdfCircle" end="\n}" />
 </section>
 
 <section>
-- Shift, Scale, Rotate
+  <WebGlCode file="06-beispiele-kreis" start="vec4 chooseColor" end="\n}" />
 </section>
 
 <section>
-- Combining primitives
+  <WebGlCode file="06-beispiele-kreis" start="void main" />
 </section>
+
+<section>
+  <WebGlCanvas file="06-beispiele-kreis" />
+</section>
+
+<section>
+### Besserer Kreis
+
+- Geht das Runder?
+- Geht das weniger ~treppig?
+</section>
+
+<section>
+  <WebGlCode file="06-beispiele-kreis-2" start="vec4 chooseColor" end="\n}" />
+</section>
+
+<section>
+  <WebGlCode file="06-beispiele-kreis-2" start="void main" />
+</section>
+
+<section>
+  <WebGlCanvas file="06-beispiele-kreis-2" />
+</section>
+
+<section>### Beispiel Rechteck</section>
+
+<section>- Shift, Scale, Rotate</section>
+
+<section>- Combining primitives - Union - Intersection - Difference</section>
