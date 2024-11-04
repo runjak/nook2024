@@ -128,22 +128,20 @@ const initUniforms = (
     let [clickX, clickY] = [0, 0];
 
     const getPosition = (event: MouseEvent): [number, number] => {
-      const { left, top } = canvas.getBoundingClientRect();
+      const { left, top, height } = canvas.getBoundingClientRect();
       const { clientX, clientY } = event;
 
-      return [clientX - left, clientY - top];
+      const x = clientX - left;
+      const y = height - (clientY - top);
+
+      return [x * (2 / 3), y * (2 / 3)];
     };
-
-    canvas.addEventListener("mousemove", (event: MouseEvent) => {
-      const [x, y] = getPosition(event);
-
-      gl.uniform4fv(iMouse, [x, y, clickX, clickY]);
-    });
 
     canvas.addEventListener("click", (event: MouseEvent) => {
       [clickX, clickY] = getPosition(event);
 
       gl.uniform4fv(iMouse, [clickX, clickY, clickX, clickY]);
+      window.requestAnimationFrame(draw);
     });
   }
 };
