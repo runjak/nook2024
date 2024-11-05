@@ -52,6 +52,7 @@ const contentMap = Object.fromEntries(
 
 <script>
   import Reveal from "reveal.js";
+  import RevealMath from "reveal.js/plugin/math/math";
   import { init as initCanvas } from "../components/canvas";
 
   const saveState = () => {
@@ -72,7 +73,7 @@ const contentMap = Object.fromEntries(
     }
   };
 
-  Reveal.initialize().then(() => {
+  Reveal.initialize({ plugins: [RevealMath.KaTeX] }).then(() => {
     loadState();
     initCanvas();
   });
