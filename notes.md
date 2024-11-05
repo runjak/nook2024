@@ -48,6 +48,7 @@ Various things found in process of doing this.
 
 - [Shader](https://en.wikipedia.org/wiki/Shader)
 - [Shading](https://en.wikipedia.org/wiki/Shading)
+- [Transform, clipping and lighting](https://en.wikipedia.org/wiki/Transform,_clipping,_and_lighting)
 
 #### YouTube
 

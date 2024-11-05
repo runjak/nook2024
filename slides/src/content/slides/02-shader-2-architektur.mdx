@@ -2,13 +2,13 @@
 title: Shader - Architektur
 ---
 
+import WebGlCode from "../../components/WebGlCode.astro";
+import TsCode from "../../components/TsCode.astro";
+
 <section>
 ## Shader - Architektur
 
-Wie sieht die Architektur aus?
-
-- Book of Shaders Grafik
-- Typen unterschiedlicher Shader
+Das ist so nach und nach komplexer geworden.
 </section>
 
 <section>
@@ -26,4 +26,16 @@ Was geht da vor sich?
 
 <section>
 Multiple shader, attributes, uniforms,..
+</section>
+
+<section>
+### Unser vertex shader
+
+<WebGlCode file="02-vertex-shader"/>
+</section>
+
+<section>
+### Unsere vertices
+
+<TsCode file="canvas" start="  const vertices" end="\);"/>
 </section>
