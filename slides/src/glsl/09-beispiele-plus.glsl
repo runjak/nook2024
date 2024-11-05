@@ -51,7 +51,7 @@ float sdPlus(vec3 p, vec2 b, float r) {
   return opSmoothUnion(b1, opSmoothUnion(b2, b3, 0.025), 0.025);
 }
 
-float sdf(in vec3 p) {
+float sdf(vec3 p) {
   p = vec3(p.xy - vec2(0.5), p.z);
   p = erot(p, normalize(vec3(1.0, 1.0, 0.0)), 0.5 * iGlobalTime);
   // p = vec3(fract(p.xy), p.z);
@@ -61,7 +61,7 @@ float sdf(in vec3 p) {
   return torus(p);
 }
 
-vec3 sdfNormal(in vec3 p) {
+vec3 sdfNormal(vec3 p) {
   const float EPS = 0.001;
   
   vec3 v1 = vec3(sdf(p + vec3(EPS, 0.0, 0.0)), sdf(p + vec3(0.0, EPS, 0.0)), sdf(p + vec3(0.0, 0.0, EPS)));
@@ -70,7 +70,7 @@ vec3 sdfNormal(in vec3 p) {
   return normalize(v1 - v2);
 }
 
-float rayMarch(in vec3 start, in vec3 direction) {
+float rayMarch(vec3 start, vec3 direction) {
   const int NUMBER_OF_STEPS = 32;
   const float MINIMUM_HIT_DISTANCE = 0.001;
   const float MAXIMUM_TRACE_DISTANCE = 1000.0;
