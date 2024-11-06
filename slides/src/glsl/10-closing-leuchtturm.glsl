@@ -26,12 +26,6 @@ vec3 erot(vec3 p, vec3 ax, float ro) {
 float dot2(vec2 v) {
   return dot(v, v);
 }
-float dot2(vec3 v) {
-  return dot(v, v);
-}
-float ndot(vec2 a, vec2 b) {
-  return a.x * b.x - a.y * b.y;
-}
 
 float sdTorus(vec3 p, vec2 t) {
   vec2 q = vec2(length(p.xz) - t.x, p.y);
@@ -61,11 +55,6 @@ float sdCappedCone(vec3 p, float h, float r1, float r2) {
   vec2 cb = q - k1 + k2 * clamp(dot(k1 - q, k2) / dot2(k2), 0.0, 1.0);
   float s = (cb.x < 0.0 && ca.y < 0.0) ? -1.0 : 1.0;
   return s * sqrt(min(dot2(ca), dot2(cb)));
-}
-
-float opSmoothUnion(float d1, float d2, float k) {
-  float h = clamp(0.5 + 0.5 * (d2 - d1) / k, 0.0, 1.0);
-  return mix(d2, d1, h) - k * h * (1.0 - h);
 }
 
 float sdDisc(vec3 p, vec2 t) {
@@ -107,42 +96,46 @@ float sdRailing(vec3 p, float ra, float rb, float h) {
   return min(rail, posts);
 }
 
+vec3 up(float y) {
+  return vec3(0.0, y, 0.0);
+}
+
 float sdLighthouse(vec3 p) {
   // Positives
-  float disc1 = sdDisc(p - vec3(0.0), vec2(127.0, 18.0) * 0.5);
-  float disc2 = sdDisc(p - vec3(0.0, 100.0, 0.0), vec2(100.0, 9.0) * 0.5);
-  float disc3 = sdDisc(p - vec3(0.0, 180.0, 0.0), vec2(81.5, 9.0) * 0.5);
+  float disc1 = sdDisc(p - vec3(0.0), vec2(63.5, 9.0));
+  float disc2 = sdDisc(p - up(100.0), vec2(50.0, 4.5));
+  float disc3 = sdDisc(p - up(180.0), vec2(40.75, 4.5));
 
-  float cone1 = sdCappedCone(p - vec3(0.0, 110.0, 0.0), 220.0 * 0.5, 127.0 * 0.5, 71.0 * 0.5);
-  float cone2 = sdCappedCone(p - vec3(0.0, 220.0, 0.0), 15.0 * 0.5, 71.0 * 0.5, 88.0 * 0.5);
+  float cone1 = sdCappedCone(p - up(110.0), 110.0, 63.5, 35.5);
+  float cone2 = sdCappedCone(p - up(220.0), 7.5, 35.5, 44.0);
 
   float tower = min(min(disc1, min(disc2, disc3)), min(cone1, cone2));
 
-  float disc4 = sdRoundedCylinder(p - vec3(0.0, 245.0, 0.0), 45.0 * 0.5, 9.0 * 0.5, 10.0);
-  float disc5 = sdDisc(p - vec3(0.0, 255.0, 0.0), vec2(100.0, 9.0) * 0.5);
-  float railing = sdRailing(p - vec3(0.0, 258.0, 0.0), 50.0, 2.5, 10.0);
+  float disc4 = sdRoundedCylinder(p - up(245.0), 22.5, 4.5, 10.0);
+  float disc5 = sdDisc(p - up(255.0), vec2(50.0, 4.5));
+  float railing = sdRailing(p - up(258.0), 50.0, 2.5, 10.0);
 
   float balcony = min(min(disc4, disc5), railing);
 
-  float cabinBase = sdRoundedCylinder(p - vec3(0.0, 305.0, 0.0), 35.0 * 0.5, 9.0 * 0.5, 40.0);
-  float disc6 = sdDisc(p - vec3(0.0, 345.0, 0.0), vec2(75.0, 9.0) * 0.5);
-  float disc7 = sdDisc(p - vec3(0.0, 355.0, 0.0), vec2(65.0, 9.0) * 0.5);
+  float cabinBase = sdRoundedCylinder(p - up(305.0), 17.5, 4.5, 40.0);
+  float disc6 = sdDisc(p - up(345.0), vec2(37.5, 4.5));
+  float disc7 = sdDisc(p - up(355.0), vec2(32.5, 4.5));
 
   float cabin = min(cabinBase, min(disc6, disc7));
 
-  float cone3 = sdCappedCone(p - vec3(0.0, 365.0, 0.0), 9.0, 65.0 * 0.5, 30.0 * 0.5);
-  float cone4 = sdCappedCone(p - vec3(0.0, 365.0 + 18.0, 0.0), 9.0, 30.0 * 0.5, 5.0);
-  float cone5 = sdCappedCone(p - vec3(0.0, 365.0 + 36.0, 0.0), 9.0, 5.0, 2.5);
-  float cone6 = sdCappedCone(p - vec3(0.0, 365.0 + 45.0, 0.0), 4.5, 5.0, 0.0);
+  float cone3 = sdCappedCone(p - up(365.0), 9.0, 32.5, 15.0);
+  float cone4 = sdCappedCone(p - up(383.0), 9.0, 15.0, 5.0);
+  float cone5 = sdCappedCone(p - up(401.0), 9.0, 5.0, 2.5);
+  float cone6 = sdCappedCone(p - up(410.0), 4.5, 5.0, 0.0);
   float roof = min(min(cone3, cone4), min(cone5, cone6));
 
   float wanted = min(min(tower, balcony), min(cabin, roof));
 
   // Negatives
-  float doors1 = sdDoors(p - vec3(0.0, 28.0, 0.0), vec3(34.0, 38.0, 127.0) * 0.5, 5.0);
-  float doors2 = sdDoors(p - vec3(0.0, 120.0, 0.0), vec3(27.0, 36.0, 127.0) * 0.5, 5.0);
-  float doors3 = sdDoors(p - vec3(0.0, 200.0, 0.0), vec3(15.0, 22.0, 127.0) * 0.5, 5.0);
-  float doors4 = sdDoors(p - vec3(0.0, 295.0, 0.0), vec3(30.0, 38.0, 75.0) * 0.5, 5.0);
+  float doors1 = sdDoors(p - up(28.0), vec3(17.0, 19.0, 63.5), 5.0);
+  float doors2 = sdDoors(p - up(120.0), vec3(13.5, 18.0, 63.5), 5.0);
+  float doors3 = sdDoors(p - up(200.0), vec3(7.5, 11.0, 63.5), 5.0);
+  float doors4 = sdDoors(p - up(295.0), vec3(15.0, 19.0, 37.5), 5.0);
 
   float unwanted = min(min(doors1, doors2), min(doors3, doors4));
 
