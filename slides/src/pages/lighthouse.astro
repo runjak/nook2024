@@ -4,12 +4,10 @@ import WebGlCanvas from "../components/WebGlCanvas.astro";
 ---
 
 <Layout title="Nook2024: der Leuchtturm">
-  <main>
+  <main style="width: 100%;">
     <h1>Malen nach <span class="text-gradient">Zahlen</span></h1>
 
-    <div class="thing">
-      <WebGlCanvas file="10-closing-leuchtturm" />
-    </div>
+    <WebGlCanvas file="10-closing-leuchtturm" />
     <a href="/"><span>&rarr;</span><span class="text-gradient"> Home</span></a>
   </main>
 </Layout>
@@ -18,35 +16,3 @@ import WebGlCanvas from "../components/WebGlCanvas.astro";
   import { init as initCanvas } from "../components/canvas";
   initCanvas();
 </script>
-
-<style>
-  main {
-    margin: auto;
-    padding: 1rem;
-    width: 100%;
-    color: white;
-    font-size: 20px;
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  a {
-    color: #fff475;
-  }
-
-  .text-gradient {
-    background-image: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 400%;
-    background-position: 0%;
-  }
-
-  .thing {
-    width: 100%;
-    height: 100%;
-  }
-</style>

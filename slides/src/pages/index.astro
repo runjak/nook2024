@@ -14,46 +14,22 @@ import Card from "../components/Card.astro";
         title="Nook2024"
         body="Visit the Nook 2024 website."
       />
+      <Card href="/notes" title="Notes" body="I want to rummage around." />
+      <Card
+        href="/lighthouse"
+        title="Lighthouse"
+        body="Just the lighthouse please."
+      />
       <Card
         href="https://github.com/runjak/nook2024"
         title="GitHub repository"
-        body="Can I see the code?"
+        body="See the code."
       />
       <Card
         href="https://www.runjak.codes"
         title="runjak.codes"
         body="Who made this?"
       />
-      <Card
-        href="/lighthouse"
-        title="Lighthouse"
-        body="Just the lighthouse please."
-      />
     </ul>
   </main>
 </Layout>
-
-<style>
-  main {
-    margin: auto;
-    padding: 1rem;
-    width: 800px;
-    max-width: calc(100% - 2rem);
-    color: white;
-    font-size: 20px;
-    line-height: 1.6;
-  }
-  .text-gradient {
-    background-image: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 400%;
-    background-position: 0%;
-  }
-  .cards-list {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 0;
-  }
-</style>
