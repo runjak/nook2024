@@ -49,6 +49,7 @@ Various things found in process of doing this.
 - [Shader](https://en.wikipedia.org/wiki/Shader)
 - [Shading](https://en.wikipedia.org/wiki/Shading)
 - [Transform, clipping and lighting ](https://en.wikipedia.org/wiki/Transform,_clipping,_and_lighting)
+- [Graphics Pipeline](https://en.wikipedia.org/wiki/Graphics_pipeline)
 
 #### YouTube
 
@@ -72,3 +73,4 @@ Various things found in process of doing this.
 - Viscircle: [Fragment Shader WebGL](https://viscircle.de/how-to-play-around-with-fragment-shaders-in-webgl/?lang=en)
 - webglfundamentals.org: [WebGL Shaders and GLSL](https://webglfundamentals.org/webgl/lessons/webgl-shaders-and-glsl.html)
 - webglfundamentals.org: [WebGL Drawing Without Data](https://webglfundamentals.org/webgl/lessons/webgl-drawing-without-data.html)
+- khronos.org: [Rendering Pipeline Overview](https://www.khronos.org/opengl/wiki/Rendering_Pipeline_Overview)
