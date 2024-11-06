@@ -12,20 +12,39 @@ Das ist so nach und nach komplexer geworden.
 </section>
 
 <section>
-## Shader Ausführungseinschränkungen
+### Die Grafikpipeline
 
-Was geht eigentlich gut, was ist schwer?
+![Skizze zur Grafikpipeline](/graphics-pipeline.svg)
+</section>
+
+<section>
+### Variablen
+
+- const: Compilezeit
+- uniform: 1x Zeichnen
+- attribute: Input zu Vertex Shader
+- varying: Vertex Shader zu Fragment Shader
 </section>
 
 <section>
 ## Shader Compilezeit
 
-Wann und wo werden Shader eigentlich compiled?
-Was geht da vor sich?
+Shader werden compileShader
+
+- Bei Bedarf
+- Vom Treiber
 </section>
 
 <section>
-Multiple shader, attributes, uniforms,..
+### Shader compilation
+
+<TsCode file="canvas" start="const makeShader" end="\n};" />
+</section>
+
+<section>
+### Shader linking
+
+<TsCode file="canvas" start="const initShaders" end="\n};" />
 </section>
 
 <section>
