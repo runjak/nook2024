@@ -23,13 +23,13 @@ vec3 erot(vec3 p, vec3 ax, float ro) {
   return mix(dot(ax, p) * ax, p, cos(ro)) + cross(ax, p) * sin(ro);
 }
 
-float dot2(in vec2 v) {
+float dot2(vec2 v) {
   return dot(v, v);
 }
-float dot2(in vec3 v) {
+float dot2(vec3 v) {
   return dot(v, v);
 }
-float ndot(in vec2 a, in vec2 b) {
+float ndot(vec2 a, vec2 b) {
   return a.x * b.x - a.y * b.y;
 }
 
