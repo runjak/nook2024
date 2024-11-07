@@ -106,15 +106,37 @@ const initUniforms = (
 
   const iGlobalTime = gl.getUniformLocation(program, "iGlobalTime");
   if (iGlobalTime) {
+    let visible = false;
+
     const step = (time: DOMHighResTimeStamp) => {
       gl.uniform1f(iGlobalTime, time / 1_000);
 
       draw();
 
-      window.requestAnimationFrame(step);
+      if (visible) {
+        window.requestAnimationFrame(step);
+      }
     };
 
-    window.requestAnimationFrame(step);
+    const observer = new IntersectionObserver(
+      (events) => {
+        if (events.length !== 1) {
+          return;
+        }
+
+        [{ isIntersecting: visible }] = events;
+
+        if (visible) {
+          window.requestAnimationFrame(step);
+        }
+      },
+      {
+        rootMargin: "0px",
+        threshold: 0.5,
+      }
+    );
+
+    observer.observe(canvas);
   }
 
   /**
