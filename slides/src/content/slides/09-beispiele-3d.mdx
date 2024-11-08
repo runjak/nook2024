@@ -5,26 +5,27 @@ title: Beispiele in 3D
 import WebGlCode from "../../components/WebGlCode.astro";
 import WebGlCanvas from "../../components/WebGlCanvas.astro";
 
-<section>
-## SDFs in 3D
-</section>
+<section>## SDFs in 3D</section>
 
 <section>
 ### Raymarching
 
 ![Raymarching Konzept 1](/09-beispiele-raymarching-1.svg)
+
 </section>
 
 <section>
 ### Raymarching
 
 ![Raymarching Konzept 2](/09-beispiele-raymarching-2.svg)
+
 </section>
 
 <section>
 ### Raymarching
 
 ![Raymarching Konzept 3](/09-beispiele-raymarching-3.svg)
+
 </section>
 
 <section>
@@ -45,12 +46,16 @@ import WebGlCanvas from "../../components/WebGlCanvas.astro";
 <WebGlCanvas file="09-beispiele-plus" />
 </section>
 
-{/* <section>
-FIXME drip feed these?
+<section>
+#### Wieso ist das bunt?
 
-- Raymarching
-- Normalen
-- Licht und Reflektion
-- Kugel, Quader, Liste von Beispielen
-- Kombinieren
-</section> */}
+- Weil Bunt 💖
+- Weil Normalenvektoren hilfreich sind.
+
+</section>
+
+<section>
+Bei den Normalenvektoren können wir tricksen:
+
+<WebGlCode file="09-beispiele-plus" start="vec3 sdfNormal" end="\n}" />
+</section>
