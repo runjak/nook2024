@@ -26,7 +26,7 @@ Ein Ausflug zu Shadern und Signed Distance Functions.
 
 ## Vortragende
 
-Jakob Runge
+Fiona Runge
 
 ## Verfügbarkeit
 

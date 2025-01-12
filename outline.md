@@ -2,7 +2,7 @@
 
 ## Intro
 
-- Moin, ich bins, Jakob 🙋‍♀️
+- Moin, ich bins, Fiona 🙋‍♀️
 
 ## Den Titel addressieren
 
