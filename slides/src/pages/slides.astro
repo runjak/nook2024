@@ -6,6 +6,17 @@ import "reveal.js/dist/reveal.css";
 import "reveal.js/dist/theme/black.css";
 
 const slides = await getCollection("slides");
+slides.sort(({ slug: aSlug }, { slug: bSlug }) => {
+  if (aSlug < bSlug) {
+    return -1;
+  }
+
+  if (bSlug < aSlug) {
+    return 1;
+  }
+
+  return 0;
+});
 
 const contentMap = Object.fromEntries(
   await Promise.all(
